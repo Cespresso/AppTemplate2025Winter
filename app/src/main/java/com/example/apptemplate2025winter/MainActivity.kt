@@ -3,13 +3,20 @@ package com.example.apptemplate2025winter
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
+import androidx.activity.enableEdgeToEdge
+import com.example.apptemplate2025winter.ui.navigation.AppNavigation
+import com.example.apptemplate2025winter.ui.theme.AppTemplate2025WinterTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
-            Text("Hello Android!")
+            AppTemplate2025WinterTheme {
+                AppNavigation()
+            }
         }
     }
 }
